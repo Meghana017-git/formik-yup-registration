@@ -34,7 +34,7 @@ const App = () => {
                   type="text"
                   name="fname"
                   className="border border-gray-300"
-                ></Field>
+                />
 
                 {touched.fname && errors.fname && <small>{errors.fname}</small>}
               </div>
@@ -44,7 +44,7 @@ const App = () => {
                   type="text"
                   name="lname"
                   className="border border-gray-300"
-                ></Field>
+                />
 
                 {touched.lname && errors.lname && <small>{errors.lname}</small>}
               </div>
@@ -54,7 +54,7 @@ const App = () => {
                   type="email"
                   name="email"
                   className="border border-gray-300"
-                ></Field>
+                />
 
                 {touched.email && errors.email && <small>{errors.email}</small>}
               </div>
@@ -64,7 +64,7 @@ const App = () => {
                   type="date"
                   name="sdate"
                   className="border border-gray-300"
-                ></Field>
+                />
 
                 {touched.sdate && errors.sdate && <small>{errors.sdate}</small>}
               </div>
@@ -74,7 +74,7 @@ const App = () => {
                   type="date"
                   name="edate"
                   className="border border-gray-300"
-                ></Field>
+                />
 
                 {touched.edate && errors.edate && <small>{errors.edate}</small>}
               </div>
@@ -93,7 +93,7 @@ const App = () => {
                 {touched.file && errors.file && <small>{errors.file}</small>}
               </div>
               <div className="flex align-center pb-4">
-                <Field type="checkbox" name="cond" className="pr-4"></Field>
+                <Field type="checkbox" name="cond" className="pr-4"/>
                 <label htmlFor="cond">Read all Privacy Policy Content</label>
 
                 {touched.cond && errors.cond && <small>{errors.cond}</small>}
