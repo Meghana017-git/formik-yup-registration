@@ -38,7 +38,7 @@ const App = () => {
                   className="border border-gray-300 p-2 block w-full rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
                 />
 
-                {touched.fname && errors.fname && <small>{errors.fname}</small>}
+                {touched.fname && errors.fname && <small className="text-red-500">{errors.fname}</small>}
               </div>
               <div className="pb-4">
                 <label htmlFor="lname" className="pr-4">
@@ -50,7 +50,7 @@ const App = () => {
                   className="border border-gray-300 p-2 block w-full rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
                 />
 
-                {touched.lname && errors.lname && <small>{errors.lname}</small>}
+                {touched.lname && errors.lname && <small className="text-red-500">{errors.lname}</small>}
               </div>
               <div className="pb-4">
                 <label htmlFor="email" className="pr-4">
@@ -62,7 +62,7 @@ const App = () => {
                   className="border border-gray-300 p-2 block w-full rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
                 />
 
-                {touched.email && errors.email && <small>{errors.email}</small>}
+                {touched.email && errors.email && <small className="text-red-500">{errors.email}</small>}
               </div>
               <div className="pb-4">
                 <label htmlFor="sdate" className="pr-4">
@@ -74,7 +74,7 @@ const App = () => {
                   className="border border-gray-300 p-2 block w-full rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
                 />
 
-                {touched.sdate && errors.sdate && <small>{errors.sdate}</small>}
+                {touched.sdate && errors.sdate && <small className="text-red-500">{errors.sdate}</small>}
               </div>
               <div className="pb-4">
                 <label htmlFor="edate" className="pr-4">
@@ -86,7 +86,7 @@ const App = () => {
                   className="border border-gray-300 p-2 block w-full rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
                 />
 
-                {touched.edate && errors.edate && <small>{errors.edate}</small>}
+                {touched.edate && errors.edate && <small className="text-red-500">{errors.edate}</small>}
               </div>
               <div className="pb-4">
                 <label htmlFor="file" className="pr-4">
@@ -102,17 +102,17 @@ const App = () => {
                     setFieldValue("file", event.currentTarget.files[0]);
                   }}
                 />
-                {touched.file && errors.file && <small>{errors.file}</small>}
+                {touched.file && errors.file && <small className="text-red-500">{errors.file}</small>}
               </div>
               <div className="pb-4">
                 <Field type="checkbox" name="cond" className="p-2 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" />
                 <label htmlFor="cond">Read all Privacy Policy Content</label>
 
-                {touched.cond && errors.cond && <small>{errors.cond}</small>}
+                {touched.cond && errors.cond && <small className="text-red-500">{errors.cond}</small>}
               </div>
               <button
                 type="submit"
-                className="bg-blue-400 text-white px-4 py-2"
+                className="bg-blue-500 text-white px-4 py-2"
                 disabled={!isValid}
               >
                 Submit
