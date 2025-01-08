@@ -11,73 +11,105 @@ const initialValues = {
   password: "",
   cpassword: "",
   file: null,
-  cond: false, 
+  cond: false,
 };
 
 const App = () => {
   return (
-    <div className="">
-      <Formik initialValues={initialValues} validationSchema={Validation}
-       onSubmit={(values) => {
-          console.log("Form submitted with values:", values);
-        }}
+    <>
+      <h1 className="text-3xl text-center py-5">Registration Form</h1>
+      <div className="flex align-center justify-center">
+        <Formik
+          initialValues={initialValues}
+          validationSchema={Validation}
+          onSubmit={(values) => {
+            console.log("Form submitted with values:", values);
+          }}
         >
-        {({ errors, touched, isValid, setFieldValue  }) => (
-          <Form>
-            <label htmlFor="fname">First Name</label>
-            <Field type="text" name="fname"></Field>
-            <br></br>
-            {touched.fname && errors.fname && <small>{errors.fname}</small>}
-            <br></br>
+          {({ errors, touched, isValid, setFieldValue }) => (
+            <Form className="bg-zinc-300 px-4 py-4">
+              <div className="flex align-center pb-4">
+                <label htmlFor="fname" className="pr-4">First Name</label>
+                <Field
+                  type="text"
+                  name="fname"
+                  className="border border-gray-300"
+                ></Field>
 
-            <label htmlFor="lname">Last Name</label>
-            <Field type="text" name="lname"></Field>
-            <br></br>
-            {touched.lname && errors.lname && <small>{errors.lname}</small>}
-            <br></br>
+                {touched.fname && errors.fname && <small>{errors.fname}</small>}
+              </div>
+              <div className="flex align-center pb-4">
+                <label htmlFor="lname" className="pr-4">Last Name</label>
+                <Field
+                  type="text"
+                  name="lname"
+                  className="border border-gray-300"
+                ></Field>
 
-            <label htmlFor="email">Email</label>
-            <Field type="email" name="email"></Field>
-            <br></br>
-            {touched.email && errors.email && <small>{errors.email}</small>}
-            <br></br>
+                {touched.lname && errors.lname && <small>{errors.lname}</small>}
+              </div>
+              <div className="flex align-center pb-4">
+                <label htmlFor="email" className="pr-4">Email</label>
+                <Field
+                  type="email"
+                  name="email"
+                  className="border border-gray-300"
+                ></Field>
 
-            <label htmlFor="sdate">Start Date</label>
-            <Field type="date" name="sdate"></Field>
-            <br></br>
-            {touched.sdate && errors.sdate && <small>{errors.sdate}</small>}
-            <br></br>
+                {touched.email && errors.email && <small>{errors.email}</small>}
+              </div>
+              <div className="flex align-center pb-4">
+                <label htmlFor="sdate" className="pr-4">Start Date</label>
+                <Field
+                  type="date"
+                  name="sdate"
+                  className="border border-gray-300"
+                ></Field>
 
-            <label htmlFor="edate">End Date</label>
-            <Field type="date" name="edate"></Field>
-            <br></br>
-            {touched.edate && errors.edate && <small>{errors.edate}</small>}
-            <br></br>
+                {touched.sdate && errors.sdate && <small>{errors.sdate}</small>}
+              </div>
+              <div className="flex align-center pb-4">
+                <label htmlFor="edate" className="pr-4">End Date</label>
+                <Field
+                  type="date"
+                  name="edate"
+                  className="border border-gray-300"
+                ></Field>
 
-            <label htmlFor="file">Upload File</label>
-            <input
-              id="file"
-              name="file"
-              type="file"
-              accept="image/jpeg, image/png, image/webp"
-              onChange={(event) => {
-                setFieldValue("file", event.currentTarget.files[0]);
-              }}
-            />
-            {touched.file && errors.file && <small>{errors.file}</small>}
-            <br />
+                {touched.edate && errors.edate && <small>{errors.edate}</small>}
+              </div>
+              <div className="flex align-center pb-4">
+                <label htmlFor="file" className="pr-4">Upload File</label>
+                <input
+                  id="file"
+                  name="file"
+                  type="file"
+                  className="border border-gray-300"
+                  accept="image/jpeg, image/png, image/webp"
+                  onChange={(event) => {
+                    setFieldValue("file", event.currentTarget.files[0]);
+                  }}
+                />
+                {touched.file && errors.file && <small>{errors.file}</small>}
+              </div>
+              <div className="flex align-center pb-4">
+                <Field type="checkbox" name="cond" className="pr-4"></Field>
+                <label htmlFor="cond">Read all Privacy Policy Content</label>
 
-            <Field type="checkbox" name="cond"></Field>
-            <label htmlFor="cond">Read all Privacy Policy Content</label>
-            <br></br>
-            {touched.cond && errors.cond && <small>{errors.cond}</small>}
-            <br></br>
-
-            <button type="submit" disabled={!isValid}>Submit</button>
-          </Form>
-        )}
-      </Formik>
-    </div>
+                {touched.cond && errors.cond && <small>{errors.cond}</small>}
+              </div>
+              <button
+                type="submit"
+                className="bg-blue-400 text-white px-4 py-2"
+                disabled={!isValid}
+              >
+                Submit
+              </button>
+            </Form>
+          )}
+        </Formik>
+      </div>
+    </>
   );
 };
 
